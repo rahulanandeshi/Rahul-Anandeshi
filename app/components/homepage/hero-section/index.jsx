@@ -7,6 +7,7 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaBitbucket, FaMedium } from "react-icons/fa6";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
+import Typewriter from "../../helper/typewriter";
 
 function HeroSection() {
   return (
@@ -26,8 +27,12 @@ function HeroSection() {
             This is {' '}
             <span className=" text-pink-500">{personalData.name}</span>
             {` , I'm a Professional `}
-            <span className=" text-[#16f2b3]">{personalData.designation}</span>
-            .
+            <Typewriter
+              words={["Senior Full-Stack Engineer", "Author", "Artist", "Photographer"]}
+              typingSpeed={80}
+              deletingSpeed={50}
+              pauseDuration={1500}
+            />
           </h1>
 
           <div className="my-12 flex items-center gap-5">
