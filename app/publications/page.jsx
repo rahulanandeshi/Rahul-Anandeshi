@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsAmazon } from "react-icons/bs";
 import { FaBookOpen, FaPenFancy } from "react-icons/fa6";
+import BookCarousel from "../components/book-carousel";
 
 export const metadata = {
   title: "Publications - Rahul Anandeshi",
@@ -40,8 +41,13 @@ export default function PublicationsPage() {
 
           <div className="p-6 lg:p-10">
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-              {/* Book Covers */}
-              <div className="flex flex-row gap-4 justify-center lg:justify-start shrink-0">
+              {/* Book Covers — mobile carousel */}
+              <div className="sm:hidden shrink-0">
+                <BookCarousel />
+              </div>
+
+              {/* Book Covers — desktop side by side */}
+              <div className="hidden sm:flex flex-row gap-4 justify-center lg:justify-start shrink-0">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-violet-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
                   <Image
@@ -52,7 +58,7 @@ export default function PublicationsPage() {
                     className="relative rounded-lg shadow-2xl transition-transform duration-300 hover:scale-105"
                   />
                 </div>
-                <div className="relative group hidden sm:block">
+                <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 to-pink-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
                   <Image
                     src="/image/books/wise_words_back.png"
